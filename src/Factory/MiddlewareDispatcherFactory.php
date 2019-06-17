@@ -10,7 +10,6 @@ class MiddlewareDispatcherFactory
 {
     public function __invoke(ContainerInterface $container)
     {
-        /* @var UrlMatcherInterface $router */
         $router = $container->get(UrlMatcherInterface::class);
 
         return new MiddlewareDispatcher([
