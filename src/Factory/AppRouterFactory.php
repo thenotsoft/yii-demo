@@ -14,7 +14,8 @@ class AppRouterFactory
     {
         $routes = [
             Route::get('/')->to(new Controller(SiteController::class, 'index', $container)),
-            Route::get('/test/{id:\w+}')->to(new Controller(SiteController::class, 'testParameter', $container))
+            Route::get('/test/{id:\w+}')->to(new Controller(SiteController::class, 'testParameter', $container)),
+            Route::get('/error')->name('error')->to(new Controller(SiteController::class, 'error', $container)),
         ];
 
         return (new RouterFactory(new FastRouteFactory(), $routes))($container);

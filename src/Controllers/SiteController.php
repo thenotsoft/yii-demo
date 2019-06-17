@@ -52,4 +52,9 @@ class SiteController implements ViewContextInterface
     {
         return $this->aliases->get('@views') . '/site';
     }
+
+    public function error()
+    {
+        throw new \RuntimeException('sample error');
+    }
 }
